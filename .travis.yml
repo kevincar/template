@@ -1,0 +1,13 @@
+language: cpp
+
+os:
+    - osx
+    - windows
+
+before_install:
+    - if [ "$TRAVIS_OS_NAME" = "osx" ] ; then sh ./scripts/osx/install-dependencies.sh ; fi
+    - if [ "$TRAVIS_OS_NAME" = "windows" ] ; then cmd ./scripts/windows/install-dependencies.bat ; fi
+
+install:
+    - if [ "$TRAVIS_OS_NAME" = "osx" ] ; then sh ./scripts/osx/build.sh ; fi
+    - if [ "$TRAVIS_OS_NAME" = "windows" ] ; then cmd ./scripts/windows/build.bat ; fi
