@@ -5,9 +5,9 @@ cmake_minimum_required(VERSION 3.2 FATAL_ERROR)
 set(PROJECT_NAME hello)
 project("${PROJECT_NAME}" VERSION 0.1 LANGUAGES CXX)
 
-set(CMAKE_CXX STANDARD 17)
-set(CMAKE_CXX_STANARD_REQUIRED ON)
-set(CMAKE_CXX_EXTENSIONS OFF)
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS ON)
 
 # Insert Dependencies here
 # find_package
@@ -18,11 +18,14 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 add_executable("${PROJECT_NAME}"
 	# List your files to include in the project
 	src/main.cpp
+	src/add.cpp
 	)
 
 # Include directories for your dependencies so that the #include directive
 # works
-# target_include_directories()
+target_include_directories("${PROJECT_NAME}" BEFORE
+	PUBLIC
+		include)
 
 # Link personally-made dependencies
 # add_subdirectory
@@ -31,7 +34,7 @@ add_executable("${PROJECT_NAME}"
 # target_link_libraries()
 
 # Add Tests
-# add_subdirectory(tests)
+add_subdirectory(tests)
 
 
 # INSTALL
