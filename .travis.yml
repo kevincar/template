@@ -8,6 +8,10 @@ before_install:
     - if [ "$TRAVIS_OS_NAME" = "osx" ] ; then sh ./scripts/osx/install-dependencies.sh ; fi
     - if [ "$TRAVIS_OS_NAME" = "windows" ] ; then ./scripts/windows/install-dependencies.bat ; fi
 
-script:
+install:
     - if [ "$TRAVIS_OS_NAME" = "osx" ] ; then sh ./scripts/osx/build.sh ; fi
     - if [ "$TRAVIS_OS_NAME" = "windows" ] ; then ./scripts/windows/build.bat ; fi
+
+script:
+    - if [ "$TRAVIS_OS_NAME" = "osx" ] ; then ./build/tests/helloTest ; fi
+    - if [ "$TRAVIS_OS_NAME" = "windows" ] ; then ./build/tests/helloTest.exe; fi

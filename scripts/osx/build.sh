@@ -18,4 +18,4 @@ echo "Generating build environment..."
 cmake ..
 
 echo "Making..."
-make
+cmake --build .
