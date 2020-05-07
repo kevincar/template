@@ -14,4 +14,4 @@ install:
 
 script:
     - if [ "$TRAVIS_OS_NAME" = "osx" ] ; then ./build/tests/helloTest ; fi
-    - if [ "$TRAVIS_OS_NAME" = "windows" ] ; then ./build/tests/helloTest.exe; fi
+    - if [ "$TRAVIS_OS_NAME" = "windows" ] ; then ./build/tests/Release/helloTest.exe; fi
