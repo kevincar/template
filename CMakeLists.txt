@@ -1,7 +1,7 @@
 # Replace values
 # ProjectName: Change to your project name
 
-cmake_minimum_required(VERSION 3.17 FATAL_ERROR)
+cmake_minimum_required(VERSION 3.15 FATAL_ERROR)
 set(PROJECT_NAME hello)
 project("${PROJECT_NAME}" VERSION 0.1 LANGUAGES CXX)
 
