@@ -35,25 +35,25 @@ jobs:
       - uses: actions/checkout@v2
 
       # Dependencies
-      - name: windows-dependencies
+      - name: Windows Dependencies
         if: runner.os == "Windows"
         run: ./scripts/windows/install-dependencies.bat
-      - name: nix-dependencies
+      - name: Nix Dependencies
         if: runner.os != "Windows"
         run: ./scripts/osx/install-dependencies.sh
       
       # Build
-      - name: windows-build
+      - name: Windows Build
         if: runner.os == "Windows"
         run: ./scripts/windows/build.bat
-      - name: nix-build
+      - name: Nix Build
         if: runner.os != "Windows"
         run: ./scripts/osx/build.sh
       
       # Test
-      - name: windows-test
+      - name: Windows Test
         if: runner.os == "Windows"
         run: ./build/tests/helloTest.exe
-      - name: nix-test
+      - name: Nix Test
         if: runner.os != "Windows"
         run: ./build/tests/helloTest
