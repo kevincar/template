@@ -58,7 +58,7 @@ jobs:
       # Test
       - name: Windows Test
         if: runner.os == 'Windows'
-        run: ./build/tests/helloTest.exe
+        run: ./build/tests/Release/helloTest.exe
       - name: Nix Test
         if: runner.os != 'Windows'
         run: ./build/tests/helloTest
