@@ -41,7 +41,9 @@ jobs:
         run: ./scripts/windows/install-dependencies.bat
       - name: Nix Dependencies
         if: runner.os != 'Windows'
-        run: ./scripts/osx/install-dependencies.sh
+        run: |
+          chmod +x ./scripts/osx/install-dependencies.sh
+          ./scripts/osx/install-dependencies.sh
       
       # Build
       - name: Windows Build
@@ -49,7 +51,9 @@ jobs:
         run: ./scripts/windows/build.bat
       - name: Nix Build
         if: runner.os != 'Windows'
-        run: ./scripts/osx/build.sh
+        run: |
+          chmod +x ./scripts/osx/build.sh
+          ./scripts/osx/build.sh
       
       # Test
       - name: Windows Test
