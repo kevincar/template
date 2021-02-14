@@ -17,6 +17,7 @@ on:
 jobs:
   # This workflow contains a single job called "build"
   build:
+    name: Prep, Build, and Test
     # The type of runner that the job will run on
     runs-on: ${{matrix.os}}
   
@@ -36,24 +37,24 @@ jobs:
 
       # Dependencies
       - name: Windows Dependencies
-        if: runner.os == "Windows"
+        if: runner.os == 'Windows'
         run: ./scripts/windows/install-dependencies.bat
       - name: Nix Dependencies
-        if: runner.os != "Windows"
+        if: runner.os != 'Windows'
         run: ./scripts/osx/install-dependencies.sh
       
       # Build
       - name: Windows Build
-        if: runner.os == "Windows"
+        if: runner.os == 'Windows'
         run: ./scripts/windows/build.bat
       - name: Nix Build
-        if: runner.os != "Windows"
+        if: runner.os != 'Windows'
         run: ./scripts/osx/build.sh
       
       # Test
       - name: Windows Test
-        if: runner.os == "Windows"
+        if: runner.os == 'Windows'
         run: ./build/tests/helloTest.exe
       - name: Nix Test
-        if: runner.os != "Windows"
+        if: runner.os != 'Windows'
         run: ./build/tests/helloTest
