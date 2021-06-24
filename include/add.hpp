@@ -1,6 +1,6 @@
-#ifndef ADD_HPP
-#define ADD_HPP
+#ifndef INCLUDE_ADD_HPP_
+#define INCLUDE_ADD_HPP_
 
 int add(int const, int const);
 
-#endif
+#endif  // INCLUDE_ADD_HPP_
